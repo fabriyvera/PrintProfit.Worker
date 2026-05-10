@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.14.37203.1 d17.14
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PrintProfit.Worker", "PrintProfit.Worker.csproj", "{EB54B9B5-3BDC-4E27-A121-263AFDE07ADC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PrintProfit.Domain", "..\PrintProfit.Domain\PrintProfit.Domain.csproj", "{2DA80666-F3DA-4851-851D-2EFD5D860531}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{EB54B9B5-3BDC-4E27-A121-263AFDE07ADC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EB54B9B5-3BDC-4E27-A121-263AFDE07ADC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EB54B9B5-3BDC-4E27-A121-263AFDE07ADC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EB54B9B5-3BDC-4E27-A121-263AFDE07ADC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2DA80666-F3DA-4851-851D-2EFD5D860531}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2DA80666-F3DA-4851-851D-2EFD5D860531}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2DA80666-F3DA-4851-851D-2EFD5D860531}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2DA80666-F3DA-4851-851D-2EFD5D860531}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {9873B3E3-21D0-4F5A-987F-A93C119450B5}
+	EndGlobalSection
+EndGlobal

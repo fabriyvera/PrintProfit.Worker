@@ -1,0 +1,21 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Worker">
+
+  <PropertyGroup>
+    <TargetFramework>net9.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <UserSecretsId>dotnet-PrintProfit.Worker-64b0f322-7be7-44bc-b0f4-b26e6608e654</UserSecretsId>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Data.SqlClient" Version="7.0.1" />
+    <PackageReference Include="Microsoft.Extensions.Hosting" Version="9.0.15" />
+    <PackageReference Include="Microsoft.Extensions.Hosting.WindowsServices" Version="9.0.15" />
+    <PackageReference Include="Serilog.Extensions.Hosting" Version="10.0.0" />
+    <PackageReference Include="Serilog.Sinks.File" Version="7.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\PrintProfit.Domain\PrintProfit.Domain.csproj" />
+  </ItemGroup>
+</Project>

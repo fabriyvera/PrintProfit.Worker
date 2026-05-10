@@ -1,0 +1,17 @@
+# Carpetas de compilación (Binarios)
+[Bb]in/
+[Oo]bj/
+
+# Configuración de Visual Studio (Lo que causó tu error anterior)
+.vs/
+*.user
+*.suo
+*.userosscache
+
+# Archivos de publicación (Si usas el comando 'dotnet publish')
+publish/
+
+# Secretos y configuración local
+# NUNCA subas secretos de producción; usa User Secrets en desarrollo
+appsettings.Development.json
+appsettings.Local.json
