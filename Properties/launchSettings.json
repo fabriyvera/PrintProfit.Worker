@@ -7,6 +7,10 @@
       "environmentVariables": {
         "DOTNET_ENVIRONMENT": "Development"
       }
+    },
+    "WSL": {
+      "commandName": "Ubuntu-24.04",
+      "distributionName": ""
     }
   }
 }
