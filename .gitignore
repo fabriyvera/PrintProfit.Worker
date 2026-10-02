@@ -15,3 +15,13 @@ publish/
 # NUNCA subas secretos de producción; usa User Secrets en desarrollo
 appsettings.Development.json
 appsettings.Local.json
+
+# Archivos generados y configuraciÃ³n local
+**/bin/
+**/obj/
+**/.vs/
+**/*.user
+**/*.suo
+**/appsettings.Local.json
+.env
+.env.*
