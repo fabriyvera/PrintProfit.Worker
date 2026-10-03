@@ -53,7 +53,7 @@ git switch version-1
 git pull --ff-only
 ```
 
-Ambos proyectos apuntan actualmente a `net9.0`. Desde la raíz de la solución, con el SDK correspondiente instalado:
+El Worker apunta a `net9.0-windows`; Domain mantiene `net9.0`. Desde la raíz de la solución, con el SDK correspondiente instalado:
 
 ```powershell
 dotnet restore PrintProfit.Worker.sln

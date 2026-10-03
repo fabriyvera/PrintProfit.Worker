@@ -1,6 +1,6 @@
 # PrintProfit — Documentación del proyecto y versión 1
 
-Fecha de actualización: 2 de octubre de 2026 (America/La_Paz).
+Fecha de actualización: 3 de octubre de 2026 (America/La_Paz).
 
 Repositorio: [fabriyvera/PrintProfit.Worker](https://github.com/fabriyvera/PrintProfit.Worker). Rama de desarrollo: `version-1`.
 
@@ -44,7 +44,7 @@ La reorganización quedó registrada en el commit [78b308e](https://github.com/f
 - Se ampliaron las exclusiones de archivos generados y configuración local en .gitignore.
 - Se conservó el historial Git y el remoto original.
 
-Esta actualización crea la rama version-1 y añade README.md, docs/PROYECTO.md y CHANGELOG.md. No cambia la lógica de impresión ni implementa los pendientes descritos más adelante.
+La entrega del 2 de octubre creó la rama version-1 y añadió README.md, docs/PROYECTO.md y CHANGELOG.md. El 3 de octubre se cambió el TargetFramework del Worker de net9.0 a net9.0-windows para declarar su dependencia de Windows. Domain conserva net9.0. La lógica de ingesta no cambia en esta corrección.
 
 La existencia del proyecto Domain resuelve la ausencia de archivos detectada en la revisión inicial. Su contenido actual es la clase vacía Class1; el DTO todavía pertenece al Worker.
 
@@ -113,7 +113,7 @@ El cobro, la idempotencia y las vistas están previstos en SQL. Su comportamient
 
 ## 5. Tecnologías y dependencias actuales
 
-Ambos proyectos apuntan a net9.0, con nullable e implicit usings habilitados. El Worker utiliza Microsoft.NET.Sdk.Worker.
+El Worker apunta a net9.0-windows y Domain a net9.0, con nullable e implicit usings habilitados. El Worker utiliza Microsoft.NET.Sdk.Worker. El sufijo windows permite al SDK declarar la plataforma de la aplicación para el analizador CA1416; no se deshabilita la regla. [Referencia de Microsoft](https://learn.microsoft.com/en-us/dotnet/fundamentals/code-analysis/quality-rules/ca1416).
 
 | Paquete del Worker | Versión declarada | Uso |
 |---|---|---|
@@ -125,7 +125,7 @@ Ambos proyectos apuntan a net9.0, con nullable e implicit usings habilitados. El
 
 El lector usa System.Diagnostics.Eventing.Reader. La ejecución requiere Windows; WSL se usa para Git, no para escuchar el canal de eventos de Windows.
 
-Los paquetes Serilog declarados no garantizan por sí solos logs en archivo: Program.cs aún no registra esa integración. La compilación y compatibilidad del conjunto de paquetes deben comprobarse con el SDK instalado; no se ejecutaron como parte de esta actualización documental.
+Los paquetes Serilog declarados no garantizan por sí solos logs en archivo: Program.cs aún no registra esa integración. El 3 de octubre el usuario confirmó una compilación Release exitosa con SDK 9.0.318, anterior al cambio de TargetFramework, con 28 advertencias CA1416. La compilación después del cambio a net9.0-windows queda pendiente de comprobar en su equipo: el entorno de revisión encontró restricciones de acceso a la configuración de NuGet y a la detección de SDKs de Windows.
 
 ## 6. Configuración
 
@@ -294,7 +294,7 @@ Después de corregir la ingesta y disponer de SQL compatible, la prueba en conso
 dotnet run --project PrintProfit.Worker/PrintProfit.Worker.csproj
 ```
 
-El modo de consola permite validar el flujo antes de instalar el servicio. Esta documentación no reporta una compilación, una impresión de prueba ni una inserción SQL exitosa.
+El modo de consola permite validar el flujo antes de instalar el servicio. Se dispone del resultado de compilación Release del usuario con 28 advertencias, anterior al ajuste de plataforma. Todavía no se reporta una impresión de prueba ni una inserción SQL exitosa.
 
 ## 11. Plan para completar la versión 1
 
@@ -346,7 +346,8 @@ Se prevén docs/deployment-windows11.md y docs/operacion-colas.md para instrucci
 - [x] Host y registro de dependencias antes de Build().
 - [x] Lector 307 y llamada SQL implementados como prototipo.
 - [x] Rama version-1 y documentación inicial de cambios.
-- [ ] Compilación Release verificada.
+- [x] Compilación Release del estado anterior verificada por el usuario (SDK 9.0.318; 28 advertencias CA1416).
+- [ ] Recompilación tras declarar net9.0-windows y ausencia de advertencias CA1416 verificadas.
 - [ ] Mapeo 307 corregido y probado con XML reales.
 - [ ] Scripts SQL y reglas de cobro versionados.
 - [ ] Idempotencia y tarifas verificadas.

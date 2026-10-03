@@ -4,6 +4,14 @@ Este archivo distingue cambios completados de trabajo pendiente. No hay un lanza
 
 ## Versión 1 — En desarrollo
 
+### 2026-10-03 — Plataforma Windows y compilación inicial
+
+- Cambiado el TargetFramework del Worker de net9.0 a net9.0-windows para declarar la plataforma requerida por EventLogWatcher y las APIs del registro de eventos.
+- Domain conserva net9.0.
+- La regla CA1416 sigue habilitada; no se añadieron supresiones.
+- Actualizados README.md y docs/PROYECTO.md con el framework y la evidencia de compilación aportada por el usuario.
+- La compilación previa del usuario fue exitosa con SDK 9.0.318 y 28 advertencias CA1416. La recompilación posterior al cambio queda pendiente: el entorno de revisión tiene restricciones de acceso a configuración NuGet y detección de SDKs de Windows.
+
 ### 2026-10-02 — Rama y documentación
 
 - Creada la rama version-1 desde main, en el commit de reorganización 78b308e.
